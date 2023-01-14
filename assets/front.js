@@ -106,8 +106,7 @@ document.querySelector('.pay').addEventListener('click', (e) => {
     e.preventDefault();
 
     // Get input cash received field value, set to number
-    let amount = document.querySelector('.received').value;
-    amount *= 1;
+    let amount = eval(document.querySelector('.received-money').value);
 
     // Set cashReturn to return value of pay()
     let cashReturn = pay(amount);

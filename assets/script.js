@@ -1,5 +1,8 @@
 // create an array called products
-let products = []; 
+let products = [];
+
+// Total amount of money paid by user
+let totalPaid = 0;
 
 // Adding products into products(array) as objects
 products.push(
@@ -35,31 +38,12 @@ let cart = [];
  * @productId: represents the identity of a product to be added the database
  */
 function addProductToCart(productId) {
-    if (cart.length === 0) {
-        for (const product of products) { //Looping through products
-            if (productId === product.productId) { // Add product to cart if 
-                cart.push({...product, quantity: 1});
-            }
-        }
-    } else {
-        let incremented = 0;
-        for (const item of cart) { 
-            // Looping through cart
-            if (productId === item.productId) {
-                // increase quantity by one
-                increaseQuantity(productId);
-                incremented = 1;
-            }
-        }
-        
-        if (!incremented) {
-            for (const product of products) {
-                //Looping through products
-                if (productId === product.productId) { // Add product to cart if productId can be found in products
-                    cart.push({...product, quantity: 1});
-               }
-            }
-        }
+    // Thanks at Reviewer
+    let product = products.find(product => product.productId === productId);
+    product.quantity += 1;
+
+    if (!cart.includes(product)){
+        cart.push(product)
     }
 }
 
@@ -129,7 +113,8 @@ function emptyCart(){
  * @amount: Represents the money paid by the user
  */
 function pay(amount) {
-    return (amount - cartTotal());
+    totalPaid += amount;
+    return (totalPaid - cartTotal());
 }
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
@@ -265,7 +250,7 @@ document.querySelector('.modal-box > form > input[type=submit]').addEventListene
             }
             else if (!productImage.value) {
                 error = 1;
-                errorInfo.textContent = 'Product\'s image must be selected';
+                errorInfo.textContent = 'Product\'s image link cannot be empty';
                 errorInfo.classList.toggle('hide');
             } 
         }
