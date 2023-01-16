@@ -1,18 +1,4 @@
-# [View Page](https://kore4lyf.github.io/shopping_cart/starter/src)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Shopping Cart Functionality
 
 You will be creating the core functionality used for a storefront application. The visual of the storefront as well as the JavaScript necessary to connect the code you will write, to that visual have already been created.
 
@@ -45,7 +31,7 @@ To check if you already have Node.js installed, open your terminal application a
 node -v
 ```
 
-If Node.js is installed, a version will be returned-something like `v16.14.2`.
+If Node.js is installed, a version will be returned--something like `v16.14.2`.
 
 If Node.js is not installed, you can install it from their website: <a href="https://nodejs.org/en/" target="_blank">Nodejs.org</a>. Make sure to select the **LTS**, "Recommended for most users," version.
 
@@ -72,6 +58,27 @@ You will see a new folder has been created named `node_modules`. You can ignore 
 ### Accesing the working files
 
 You will be doing all of your work in `script.js`, which is inside the `starter/src/assets` folder. The starter code file structure looks like this:
+
+**_Starter Code_**
+
+```bash
+├── src
+│ ├── assets
+│ │ ├── front.js
+│ │ ├── script.js <--- Where you will be doing your work
+│ │ └── styles.css
+│ ├── images
+│ │ ├── cherry.jpg
+│ │ ├── orange.jpg
+│ │ └── strawberry.jpg
+│ └── index.html
+├── tests
+│ └── script.test.js
+├── package.json
+└── package-lock.json
+```
+
+## Running the Live Server
 
 The live server is a tool that will auto update every time you make a change to a file in the src directory. So if you update your script.js and you want to check whether it worked, there's no need to refresh, the live server will handle that for you. To view your project in the workspace, the live server is mandatory.
 
@@ -127,5 +134,3 @@ Step 7: [Optional] Add extra features
 ## License
 
 [License](LICENSE.txt)
-
--->
